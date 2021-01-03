@@ -26,12 +26,12 @@ namespace LightingServiceTracker
             Properties: All event properties that don't appear elsewhere in the log
             */
             var outputTemplate = "{Timestamp:HH:mm:ss}> {Message:l}{NewLine}{Exception}";
-            var filePath = $"E:/Projects/LightingServiceTracker/logs/log-{DateTime.Now:yyyy-MM-dd}.txt";
+            var filePath = $"E:/Projects/LightingServiceTracker/logs/log.txt";
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File(filePath,
                               outputTemplate: outputTemplate,
-                              rollingInterval: RollingInterval.Day)
+                              rollingInterval: RollingInterval.Infinite)
                 .CreateLogger();
 
             CreateHostBuilder(args).Build().Run();
