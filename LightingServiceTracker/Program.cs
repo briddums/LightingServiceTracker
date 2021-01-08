@@ -25,7 +25,7 @@ namespace LightingServiceTracker
 
             Properties: All event properties that don't appear elsewhere in the log
             */
-            var outputTemplate = "{Timestamp:HH:mm:ss}> {Message:l}{NewLine}{Exception}";
+            var outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss}> {Message:l}{NewLine}{Exception}";
             var filePath = $"E:/Projects/LightingServiceTracker/logs/log.txt";
 
             Log.Logger = new LoggerConfiguration()
